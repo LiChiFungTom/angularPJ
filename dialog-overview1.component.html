@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Please input Player 2's name</h1>
+<div mat-dialog-content>
+    <input matInput [(ngModel)]="data.animal">
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Enter</button>
+</div>
