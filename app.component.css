@@ -1,0 +1,52 @@
+div{
+    text-align: center;
+}
+
+
+div.player1{
+    left: 16px;
+    bottom: 8px;
+    position: absolute;
+    z-index: 2;
+}
+
+
+div.player2{
+    right: 16px;
+    bottom: 8px;
+    position: absolute;
+    z-index:2;
+}
+
+img.blue{
+    height: 30px;
+    width: 20px;
+    
+}
+
+img.yellow{
+    height: 20px;
+    width: 20px;
+    
+}
+img.cam{
+    width: 100vw;
+    height: 93vh;
+    z-index: 1;
+}
+
+canvas[resize]{
+    position: absolute;
+    z-index: 4;
+    width: 100vw;
+    height: 93vh;
+}
+
+#a{
+    font-size: 100px;    
+    display: inline-block;
+}
+
+#b{   
+    display: inline-block;
+}

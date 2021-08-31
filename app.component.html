@@ -1,0 +1,82 @@
+ <div class="player" style="display: flex; justify-content: space-between;">
+
+<!--  player 1 name -->
+ <h3><div>Player 1 Name : {{playerNameService.player1name}} </div></h3>
+
+<!-- show time -->
+<h3>{{timeLeft}} S</h3>
+
+<!--  menu -->
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>view_headline</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-raised-button (click)="openDialog()">
+      <mat-icon>restore</mat-icon>
+      <span>New Game</span>
+    </button>
+
+    <button mat-raised-button (click)="openTimeDialog()">
+      <mat-icon>access_time</mat-icon>
+      <span>Time setting</span>
+    </button>
+
+    <!-- set the Score zone setting here -->
+    <button mat-raised-button (click)="openZoneDialog()">
+      <mat-icon>zoom_out_map</mat-icon>
+      <span>Score zone setting</span>
+    </button>
+  
+    <!-- clear the score zone setting -->
+    <button mat-raised-button (click)="clear()">
+      <mat-icon>refresh</mat-icon>
+      <span>Clear the score zone setting</span>
+    </button>
+
+  </mat-menu>
+
+    <!-- player 2 name-->
+    <h3><div>Player 2 Name : {{playerNameService.player2name}}</div></h3>
+</div>
+
+
+  <!--  draw rectangle  -->
+  <canvas  (mousedown)="mousedown($event)"  (mouseup)="mouseup($event)"   resize="true" #canvas>
+  </canvas>
+  <!--  draw rectangle  -->
+
+
+
+   <!--   cam setting  -->
+   <img style="position: relative;" class="cam" src="http://192.168.1.219:8080/?action=stream?dummy=param.mjpg" > 
+   <!--   cam setting  -->
+    
+
+
+
+   <!-- player 1 score-->
+   <h1><div class="player1">
+     <div id="a">
+       {{player1score}}  
+     </div>
+     <div id="b">
+       <img class= "blue" src="assets/img/basic-blue-circle.jpg">X{{blueballs}}<br>
+       <img class = "yellow" src="assets/img/yellow.png">X{{yellowballs}}<br>
+       <img class = "yellow" src="assets/img/red.png">X{{redballs}}
+     </div>
+    </div></h1>
+   
+   <!--player 2 score -->
+     <h1><div class="player2">
+      <div id="a">
+       {{player2score}}
+     </div>
+     <div id="b">
+     <img class= "blue" src="assets/img/basic-blue-circle.jpg">X{{blueballs2}}  
+     <br><img class = "yellow" src="assets/img/yellow.png">X{{yellowballs2}}
+     <br><img class = "yellow" src="assets/img/red.png">X{{redballs2}}
+     </div> 
+     </div></h1>
+
+
+
